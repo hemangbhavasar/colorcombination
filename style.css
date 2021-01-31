@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Quattrocento Sans, Arial, sans-serif;
+  font-size:16px;
+  min-width: 20em;
+}
+
+body {
+  display: flex;
+}
+
+i {
+  display: inline-block;
+  width: 1.5em;
+  text-align: right;
+}
+
+.color {
+  height: 100%;
+  padding: 2em 0 1em 1em;
+  line-height: 200%;
+  border-left:1px solid black;
+  border-top:1px solid black;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.color:last-child{border-right:1px solid black;border-bottom:1px solid black;}
+
+.color p {
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+.inputDiv {
+  display: flex;
+}
+
+.controls {
+  width: 100%;
+  height: auto;
+}
+.inputDiv:before{ display:inline-block;
+  width:1em;}
+
+.h:before {
+  content: "h: ";
+}
+
+.s:before {
+  content: "s: ";
+}
+
+.l:before {
+  content: "l: ";
+}
+
+input[type='range'] {
+  width: 80%;
+}
+.-moz- input[type='range'] {position:relative; top:9px;}
+
+.output {
+  width: 20%;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color:transparent;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color:white;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--foo);
+  border-radius: 50%;
+  margin-top:-9px;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border: 3px solid var(--foo);
+  border-radius: 50%;
+}
+
+input[type=range]::-ms-thumb {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+  margin-top:1px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #fff;
+  border:1px solid #d9d9d9;
+  height: 3px;
+  
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  background-color: #fff;
+  border:1px solid #d9d9d9;
+  height: 3px;
+}
+
+input[type=range]::-ms-track {
+  background-color: #fff;
+  border:1px solid #d9d9d9;
+  height: 3px;
+}
+
+input[type=range]::-ms-fill-lower {background-color: #fff;}
+
+input[type=range]::-ms-fill-upper {background-color: #fff;}
+
+
+
+
+
+@media only screen and (max-width:62.5em) {
+  body {
+    flex-direction: column;
+  }
+  .color {
+    flex-direction: row;
+    justify-content:space-between;
+    flex: 1 0 9.4em;
+  }
+  .color p {
+    flex: 1 0 10em;
+    /*flex-shrink: 0*/
+  }
+  .controls {
+  flex: 1 1 calc(100% - 10em);
+  height: auto;
+}
+  input[type='range'] {
+  width: 90%;
+}
+
+.output {
+  width: 10%;
+}
+}
+
+@media only screen and (max-width:32em) {
+  input[type='range'] {
+  width: 80%;
+}
+
+.output {
+  width: 20%;
+}
+}
